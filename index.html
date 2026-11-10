@@ -1,1 +1,154 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الإجازات المرضية | مدرسة الوادي ح1</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ background:#f8f2e9;
+ color:#44212b;
+}
+header{
+ text-align:center;
+ padding:48px 16px 35px;
+ background:linear-gradient(160deg,#fff8ed,#f1e3d1);
+}
+.logo{
+ width:65px;height:65px;
+ margin:auto;
+ background:#8a1538;
+ color:#d8b77a;
+ border-radius:20px;
+ display:grid;
+ place-items:center;
+ font-size:34px;
+}
+h1{color:#8a1538;font-size:32px;margin:22px 0 8px}
+header p{color:#ad8855;font-size:19px}
+main{
+ max-width:570px;
+ margin:25px auto 60px;
+ padding:0 16px;
+}
+.card{
+ background:#fffdf9;
+ border:1px solid #e5d2b8;
+ border-radius:28px;
+ padding:28px;
+ box-shadow:0 15px 40px #8a153812;
+}
+.notice{
+ background:#f8eedb;
+ border:1px solid #dcc399;
+ border-radius:15px;
+ padding:15px;
+ text-align:center;
+ line-height:1.8;
+ margin-bottom:28px;
+}
+label,legend{
+ display:block;
+ font-weight:bold;
+ margin-bottom:12px;
+}
+input[type=text]{
+ width:100%;
+ padding:17px;
+ border:1px solid #d9c3a8;
+ border-radius:14px;
+ font-size:16px;
+ background:#faf6ef;
+}
+fieldset{border:0;padding:0;margin:26px 0}
+.options{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.options label{
+ text-align:center;
+ border:1px solid #d9c3a8;
+ border-radius:14px;
+ padding:15px 3px;
+ cursor:pointer;
+ font-weight:normal;
+ background:#faf6ef;
+}
+.options input{accent-color:#8a1538}
+.file{
+ border:2px dashed #d9c3a8;
+ border-radius:16px;
+ padding:25px 10px;
+ text-align:center;
+ background:#faf6ef;
+}
+.file input{max-width:100%;margin-top:12px}
+button{
+ width:100%;
+ margin-top:26px;
+ padding:17px;
+ background:#8a1538;
+ color:white;
+ border:0;
+ border-radius:15px;
+ font-size:18px;
+ font-weight:bold;
+}
+footer{text-align:center;color:#a48762;padding:20px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">✦</div>
+<h1>الإجازات المرضية</h1>
+<p>مدرسة الوادي ح1</p>
+</header>
+<main>
+<div class="card">
+<div class="notice">
+<strong>نسخة تجريبية</strong>
+<div>يمكن تجربة النموذج، لكن الملفات لا تُرفع أو تُحفظ حاليًا.</div>
+</div>
+<form id="leaveForm">
+<label for="student">اسم الطالب الكامل</label>
+<input id="student" type="text" placeholder="أدخل اسم الطالب" required>
+<fieldset>
+<legend>الصف الدراسي</legend>
+<div class="options">
+<label><input type="radio" name="grade" value="1" required> الأول</label>
+<label><input type="radio" name="grade" value="2"> الثاني</label>
+<label><input type="radio" name="grade" value="3"> الثالث</label>
+<label><input type="radio" name="grade" value="4"> الرابع</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>الشعبة</legend>
+<div class="options">
+<label><input type="radio" name="section" value="1" required> 1</label>
+<label><input type="radio" name="section" value="2"> 2</label>
+<label><input type="radio" name="section" value="3"> 3</label>
+<label><input type="radio" name="section" value="4"> 4</label>
+</div>
+</fieldset>
+<label for="medical">إرفاق الإجازة المرضية</label>
+<div class="file">
+📎 اختر صورة أو ملف PDF
+<input id="medical" type="file" accept=".pdf,.jpg,.jpeg,.png" required>
+</div>
+<button type="submit">تجربة إرسال الإجازة المرضية</button>
+</form>
+<p id="result" role="status" style="text-align:center"></p>
+</div>
+</main>
+<footer>مدرسة الوادي ح1 © 2026</footer>
+<script>
+document.getElementById("leaveForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ document.getElementById("result").textContent=
+ "تم التحقق من البيانات تجريبيًا. لم يتم إرسال الملف أو حفظه.";
+});
+</script>
+</body>
+</html>
+
